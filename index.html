@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#07100c" />
+  <meta name="description" content="A practical ethical cybersecurity learning roadmap with a 12-week plan, labs and progress tracking." />
+  <title>NIGHTSHIFT — Ethical Security Roadmap</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home" aria-label="Nightshift home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 42 42"><path d="M21 3.5 35 11.5v19L21 38.5 7 30.5v-19L21 3.5Z"/><path d="M14 28V14l14 14V14"/><path d="M14 21h7"/></svg></span>
+        <span class="brand-copy"><strong>NIGHTSHIFT</strong><small>Ethical security path</small></span>
+      </a>
+      <div class="sidebar-label">WORKSPACE</div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-link active" data-page="home"><span class="nav-icon">◫</span><span>Overview</span></button>
+        <button class="nav-link" data-page="roadmap"><span class="nav-icon">⌁</span><span>12-week roadmap</span></button>
+        <button class="nav-link" data-page="tree"><span class="nav-icon">⑂</span><span>Skill tree</span></button>
+        <button class="nav-link" data-page="lessons"><span class="nav-icon">▤</span><span>Lessons library</span><span class="nav-count" id="lessonCount">14</span></button>
+        <button class="nav-link" data-page="study"><span class="nav-icon">◷</span><span>Study room</span></button>
+        <button class="nav-link" data-page="reports"><span class="nav-icon">▥</span><span>Reports &amp; progress</span></button>
+        <button class="nav-link" data-page="guide"><span class="nav-icon">✳</span><span>Learning guide</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="scope-card">
+          <span class="scope-indicator"></span>
+          <div><strong>Stay in scope</strong><small>Practice only where you have permission.</small></div>
+        </div>
+        <div class="sidebar-footer"><span class="status-dot"></span> LOCAL PROGRESS STORAGE <span class="local-label">ON DEVICE</span></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+        <div class="breadcrumb"><span>WORKSPACE</span><b>/</b><strong id="currentCrumb">OVERVIEW</strong></div>
+        <div class="topbar-right">
+          <div class="today-chip"><span class="live-dot"></span><span id="todayLabel">YOUR LEARNING SPACE</span></div>
+          <div class="language-switcher" role="group" aria-label="Choose language"><button type="button" data-language="en" data-keep-en class="active" aria-pressed="true">English</button><button type="button" data-language="fa" data-keep-en aria-pressed="false">فارسی</button></div><button class="avatar" id="profileButton" aria-label="Profile and local settings">N</button>
+        </div>
+      </header>
+      <div id="pageContent" class="page-content" tabindex="-1"></div>
+      <footer class="site-footer"><span>BUILT FOR CURIOUS MINDS · RUN SAFE · STAY SHARP</span><span>VERSION 1.1 <i></i> YOUR DATA STAYS IN THIS BROWSER</span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="data.js"></script>
+  <script src="fa-content.js"></script>
+  <script src="checklists.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

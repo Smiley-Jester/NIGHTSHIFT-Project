@@ -1,0 +1,17 @@
+{
+  "name": "NIGHTSHIFT — Ethical Security Roadmap",
+  "short_name": "NIGHTSHIFT",
+  "description": "An English-first, Persian-second ethical cybersecurity learning roadmap with a 12-week plan, focused lessons and progress tracking.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#07100c",
+  "theme_color": "#07100c",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
