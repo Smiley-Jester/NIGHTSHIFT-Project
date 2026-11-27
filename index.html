@@ -13,40 +13,42 @@
 <body>
   <div class="app-shell">
     <aside class="sidebar" id="sidebar">
-      <a class="brand" href="#home" aria-label="Nightshift home">
+      <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close menu" data-i18n-label="closeMenu">✕</button>
+      <a class="brand" href="#home" aria-label="Nightshift home" data-i18n-label="brandLabel">
         <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 42 42"><path d="M21 3.5 35 11.5v19L21 38.5 7 30.5v-19L21 3.5Z"/><path d="M14 28V14l14 14V14"/><path d="M14 21h7"/></svg></span>
-        <span class="brand-copy"><strong>NIGHTSHIFT</strong><small>Ethical security path</small></span>
+        <span class="brand-copy"><strong>NIGHTSHIFT</strong><small data-i18n="brandTag">Ethical security path</small></span>
       </a>
-      <div class="sidebar-label">WORKSPACE</div>
-      <nav class="main-nav" aria-label="Main navigation">
-        <button class="nav-link active" data-page="home"><span class="nav-icon">◫</span><span>Overview</span></button>
-        <button class="nav-link" data-page="roadmap"><span class="nav-icon">⌁</span><span>12-week roadmap</span></button>
-        <button class="nav-link" data-page="tree"><span class="nav-icon">⑂</span><span>Skill tree</span></button>
-        <button class="nav-link" data-page="lessons"><span class="nav-icon">▤</span><span>Lessons library</span><span class="nav-count" id="lessonCount">14</span></button>
-        <button class="nav-link" data-page="study"><span class="nav-icon">◷</span><span>Study room</span></button>
-        <button class="nav-link" data-page="reports"><span class="nav-icon">▥</span><span>Reports &amp; progress</span></button>
-        <button class="nav-link" data-page="guide"><span class="nav-icon">✳</span><span>Learning guide</span></button>
+      <div class="sidebar-label" data-i18n="workspace">WORKSPACE</div>
+      <nav class="main-nav" aria-label="Main navigation" data-i18n-label="navLabel">
+        <button type="button" class="nav-link active" data-page="home"><span class="nav-icon">◫</span><span data-i18n="home">Overview</span></button>
+        <button type="button" class="nav-link" data-page="roadmap"><span class="nav-icon">⌁</span><span data-i18n="roadmap">12-week roadmap</span></button>
+        <button type="button" class="nav-link" data-page="tree"><span class="nav-icon">⑂</span><span data-i18n="tree">Skill tree</span></button>
+        <button type="button" class="nav-link" data-page="lessons"><span class="nav-icon">▤</span><span data-i18n="lessons">Lessons library</span><span class="nav-count" id="lessonCount">14</span></button>
+        <button type="button" class="nav-link" data-page="study"><span class="nav-icon">◷</span><span data-i18n="study">Study room</span></button>
+        <button type="button" class="nav-link" data-page="reports"><span class="nav-icon">▥</span><span data-i18n="reports">Reports &amp; progress</span></button>
+        <button type="button" class="nav-link" data-page="guide"><span class="nav-icon">✳</span><span data-i18n="guide">Learning guide</span></button>
       </nav>
       <div class="sidebar-bottom">
         <div class="scope-card">
           <span class="scope-indicator"></span>
-          <div><strong>Stay in scope</strong><small>Practice only where you have permission.</small></div>
+          <div><strong data-i18n="scopeTitle">Stay in scope</strong><small data-i18n="scopeText">Practice only where you have permission.</small></div>
         </div>
-        <div class="sidebar-footer"><span class="status-dot"></span> LOCAL PROGRESS STORAGE <span class="local-label">ON DEVICE</span></div>
+        <div class="sidebar-footer"><span class="status-dot"></span><span data-i18n="storage">LOCAL PROGRESS STORAGE</span><span class="local-label" data-i18n="onDevice">ON DEVICE</span></div>
       </div>
     </aside>
+    <div class="nav-backdrop" id="navBackdrop"></div>
 
     <main class="main-area">
       <header class="topbar">
-        <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
-        <div class="breadcrumb"><span>WORKSPACE</span><b>/</b><strong id="currentCrumb">OVERVIEW</strong></div>
+        <button type="button" class="mobile-menu" id="mobileMenu" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false" data-i18n-label="openMenu">☰</button>
+        <div class="breadcrumb"><span data-i18n="workspace">WORKSPACE</span><b>/</b><strong id="currentCrumb">OVERVIEW</strong></div>
         <div class="topbar-right">
-          <div class="today-chip"><span class="live-dot"></span><span id="todayLabel">YOUR LEARNING SPACE</span></div>
-          <div class="language-switcher" role="group" aria-label="Choose language"><button type="button" data-language="en" data-keep-en class="active" aria-pressed="true">English</button><button type="button" data-language="fa" data-keep-en aria-pressed="false">فارسی</button></div><button class="avatar" id="profileButton" aria-label="Profile and local settings">N</button>
+          <div class="today-chip"><span class="live-dot"></span><span id="todayLabel"></span></div>
+          <div class="language-switcher" role="group" aria-label="Choose language" data-i18n-label="chooseLanguage"><button type="button" data-language="en" data-keep-en class="active" aria-pressed="true">English</button><button type="button" data-language="fa" data-keep-en aria-pressed="false">فارسی</button></div>
         </div>
       </header>
       <div id="pageContent" class="page-content" tabindex="-1"></div>
-      <footer class="site-footer"><span>BUILT FOR CURIOUS MINDS · RUN SAFE · STAY SHARP</span><span>VERSION 1.1 <i></i> YOUR DATA STAYS IN THIS BROWSER</span></footer>
+      <footer class="site-footer"><span data-i18n="footerMotto">BUILT FOR CURIOUS MINDS · RUN SAFE · STAY SHARP</span><span><span data-i18n="version">VERSION 1.2</span> <i></i> <span data-i18n="privacy">YOUR DATA STAYS IN THIS BROWSER</span></span></footer>
     </main>
   </div>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>

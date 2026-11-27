@@ -1,6 +1,6 @@
 # Nightshift — Ethical Security Roadmap
 
-A responsive, bilingual cybersecurity learning dashboard built with plain HTML, CSS and JavaScript. English is the default language; English is available as a secondary language. No build step or external framework is required.
+A responsive, bilingual cybersecurity learning dashboard built with plain HTML, CSS and JavaScript. English is the default language; Persian is available as a secondary language. No build step or external framework is required.
 
 ## Run locally
 
@@ -12,11 +12,11 @@ A responsive, bilingual cybersecurity learning dashboard built with plain HTML, 
 
 - Overview dashboard with a 140-hour course target, per-lesson time budgets, lesson completion, study streak and XP.
 - 12-week roadmap with week-by-week outcomes and a capstone integrated from week 3 onward.
-- Persian-first / English-second language switcher. The full interface, lessons, roadmap, study tools, reports, notices and feedback change language; lesson titles, official video titles, resource names and essential technical terms remain in English. Persian uses right-to-left layout and Vazirmatn typography; English uses left-to-right layout and Inter.
+- English-first / Persian-second language switcher. The full interface, lessons, roadmap, study tools, reports, notices and feedback change language; lesson titles, official video titles, resource names and essential technical terms remain in English. Persian uses right-to-left layout and Vazirmatn typography; English uses left-to-right layout and Inter.
 - Interactive skill tree with six branches and one leaf per lesson. Each leaf reflects not-started, in-progress or completed status from the same saved lesson progress used elsewhere in the site.
 - Fourteen detailed lesson pages with teaching points, why the topic matters, expected outcomes, requirements, deliverables, videos and direct lab links.
 - Stopwatch and Pomodoro focus timer. Every Pomodoro start is recorded in the Study Room history. Completed/stopped focus time is added to course and lesson totals.
-- Reports with weekly activity, module effort, milestone badges, CSV export and JSON backup.
+- Reports with weekly activity, module effort, milestone badges, CSV export, JSON backup and restore.
 - Notes, completion state, settings and timer history stored in browser `localStorage`.
 - Responsive layout, reduced-motion support and SVG favicon.
 
@@ -40,9 +40,9 @@ All practical work is intended for systems explicitly provided for training or s
 
 ## Data and privacy
 
-Progress is stored locally in the browser under the key `nightshift-roadmap-v1`. It is not sent to a server. Clearing browser site data or using the Reset control removes it. Use the JSON backup button in Reports before moving browsers or devices.
+Progress is stored locally in the browser under the key `nightshift-roadmap-v1`. It is not sent to a server. Clearing browser site data or using “Reset all progress” in Reports removes it. Use the JSON backup button in Reports before moving browsers or devices, then “Restore backup” on the new one.
 
-- The selected site language is saved separately in browser storage; the default is Persian. Progress data is preserved when switching languages.
+- The selected site language is saved separately in browser storage; the default is English. Progress data is preserved when switching languages.
 
 ## Known limitations
 
