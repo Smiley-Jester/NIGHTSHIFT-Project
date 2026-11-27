@@ -7,12 +7,28 @@
   const MAX_POM_HISTORY = 300;
   const PAGES = ['home', 'roadmap', 'tree', 'lessons', 'lesson-detail', 'study', 'reports', 'guide'];
   const LIMITS = { focusMinutes: [5, 90], shortBreakMinutes: [1, 30], longBreakMinutes: [5, 60], dailyGoalMinutes: [30, 360] };
+  // Desktop scaling: the design is drawn for a 1536×864 screen and grows on larger ones.
+  const DISPLAY = { baseWidth: 1536, baseHeight: 864, minLayoutWidth: 1280, maxScale: 2.5 };
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
   // English is the default language; Persian is the secondary language.
   let currentLanguage = 'en';
   try { currentLanguage = localStorage.getItem(LANGUAGE_KEY) === 'fa' ? 'fa' : 'en'; } catch (_) { currentLanguage = 'en'; }
+
+  // ---------- Display scaling ----------
+  // Follows the screen resolution, but never shrinks the site or makes the layout narrower than the window allows.
+  // Phones, tablets and small laptops always stay at 1.
+  let uiScale = 1;
+  function applyUiScale() {
+    const byScreen = Math.min(window.screen.width / DISPLAY.baseWidth, window.screen.height / DISPLAY.baseHeight);
+    const byWindow = window.innerWidth / DISPLAY.minLayoutWidth;
+    const scale = Math.max(1, Math.floor(Math.min(byScreen, byWindow, DISPLAY.maxScale) * 100) / 100);
+    if (scale === uiScale) return;
+    uiScale = scale;
+    document.documentElement.style.setProperty('--ui-scale', String(scale));
+  }
+  applyUiScale();
 
   // ---------- Language helpers ----------
   const isFa = () => currentLanguage === 'fa';
@@ -863,6 +879,7 @@
     }
   }
   function timerTick() {
+    applyUiScale(); // also catches a window moved to another monitor
     if (state.pomodoro?.running && pomodoroRemaining() <= 0) completePomodoro();
     updateLiveTimers();
   }
@@ -872,6 +889,7 @@
     document.addEventListener('change', onChange);
     document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
     window.addEventListener('popstate', showRoute);
+    window.addEventListener('resize', applyUiScale);
     // Keeps two open tabs from overwriting each other's progress.
     window.addEventListener('storage', event => {
       if (event.key !== STORE_KEY) return;

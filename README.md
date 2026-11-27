@@ -18,7 +18,7 @@ A responsive, bilingual cybersecurity learning dashboard built with plain HTML, 
 - Stopwatch and Pomodoro focus timer. Every Pomodoro start is recorded in the Study Room history. Completed/stopped focus time is added to course and lesson totals.
 - Reports with weekly activity, module effort, milestone badges, CSV export, JSON backup and restore.
 - Notes, completion state, settings and timer history stored in browser `localStorage`.
-- Responsive layout, reduced-motion support and SVG favicon.
+- Responsive layout that scales up on high-resolution desktop screens, reduced-motion support and SVG favicon.
 
 ## Curriculum sizing
 
